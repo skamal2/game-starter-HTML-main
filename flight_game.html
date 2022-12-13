@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <title>Top Gun</title>
+</head>
+
+<body>
+<div class="container">
+    <header class="page-header">
+        <h1 class="page-title">
+            <img src="img/icons8-airplane-48.png" alt="flight_image" class="icon">&nbsp;Fly&nbsp;Quick&nbsp;
+            <img src="img/icons8-airplane-48.png" alt="flight_image" class="icon">
+        </h1>
+        <nav>
+            <ul class="flex-wrap space-evenly">
+                <li>
+                    <a class="button button-white" href="index.html">Game</a>
+                </li>
+                <li>
+                    <a class="button button-white" href="about.html">About</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <main class="flex-wrap">
+        <div id="map">
+            <img class="responsive-img" src="img/finland.svg" alt="map of finland">
+            <!--svg-vectorgraphics,quality doesnot changes while zooming -->
+        </div>
+        <div class="boxes">
+            <section class="box">
+                <header>
+                    <h2>Game Status</h2>
+                </header>
+                <table>
+                    <tr>
+                        <td colspan="2">Player name</td>
+                    </tr>
+                    <tr>
+                        <td> Co2 Consumed: <span id="consumed">0</span>kg</td><!-- to change 0 with js-->
+                        <td> Co2 Budget: <span id="budget">1000</span>kg</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="box">
+                <header>
+                    <h2 id="airport-name">Airport name</h2>
+                </header>
+                <table id="weather">
+                    <tr>
+                        <td>Temperature</td>
+                        <td>
+                            <img id="weather-icon" src="https://openweathermap.org/img/wn/10d@2x.png"
+                                 alt="Current Weather">
+                        </td>
+                        <td>Wind</td>
+
+                    </tr>
+                    <tr>
+                        <td id="airport-temp">10°C</td>
+                        <td id="airport-conditions">Cloudy</td>
+                        <td id="airport-wind">40m/s</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="box">
+                <header>
+                    <h2>Goals</h2>
+                </header>
+                <ul id="goals" class="flex-wrap">
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/01d.png" alt="Goal weather icon">
+                            <figcaption>Temperature over 25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li class="done">
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/01d.png" alt="Goal weather icon">
+                            <figcaption>Temperature over 25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/01d.png" alt="Goal weather icon">
+                            <figcaption>Temperature over 25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/01d.png" alt="Goal weather icon">
+                            <figcaption>Temperature over 25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/01d.png" alt="Goal weather icon">
+                            <figcaption>Temperature over 25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/01d.png" alt="Goal weather icon">
+                            <figcaption>Temperature over 25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/01d.png" alt="Goal weather icon">
+                            <figcaption>Temperature over 25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/01d.png" alt="Goal weather icon">
+                            <figcaption>Temperature over 25°C</figcaption>
+                        </figure>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <p>I made this!</p>
+    </footer>
+    <div class="goal hide">
+        <h2>Gooool!!!</h2>
+        <p>
+            <span id="goal-txt">Goals reached!!</span>
+        </p>
+    </div>
+
+    <div id="player-modal" class="hide">
+        <form id="player-form">
+            <input type="text" placeholder="Player name" required>
+            <input type="submit" value="Start game!">
+        </form>
+    </div>
+</div>
+</body>
+</html>
